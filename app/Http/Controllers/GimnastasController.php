@@ -11,13 +11,13 @@ class GimnastasController extends Controller
     public function index()
     {
         $gimnasta=Gimnastas::orderBy('id')->paginate(25);
-        return view('Gimnastas.index', compact('gimnasta'));//
+        return view('gimnastas.index', compact('gimnasta'));//
     }
 
 
     public function create()
     {
-        return view('Gimnastas.create');//
+        return view('gimnastas.create');//
     }
 
 
@@ -64,7 +64,7 @@ class GimnastasController extends Controller
 
         public function import()
     {
-        return view('Gimnastas.import');//
+        return view('gimnastas.import');//
     }
 
 

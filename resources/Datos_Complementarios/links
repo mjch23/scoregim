@@ -1,0 +1,30 @@
+https://es.stackoverflow.com/questions/137784/especificar-rutas-en-laravel-5-5
+https://ajgallego.gitbooks.io/laravel-5/content/capitulo_5_rest.html
+https://styde.net/modificando-migraciones-en-laravel/
+https://styde.net/insercion-de-datos-con-los-seeders-de-laravel/
+https://medium.com/@cvallejo/autenticaci%C3%B3n-de-usuarios-y-roles-en-laravel-5-5-97ab59552d91
+https://medium.com/@alexkatrompas/java-will-kill-your-startup-php-will-save-it-f3051968145d
+https://laracasts.com/discuss/channels/general-discussion/how-to-save-data-from-a-multiple-select
+https://desarrolloweb.com/articulos/practica-acceso-base-datos-laravel.html
+https://laracasts.com/discuss/channels/laravel/properly-store-something-in-the-db
+https://www.anerbarrena.com/php-array-tipos-ejemplos-3876/
+
+https://librosweb.es/libro/javascript/capitulo-7/validacion.html
+
+
+CREATE OR REPLACE VIEW gimnastas_pts_totales AS 
+SELECT g.id, g.apellido, g.nombre, g.club, g.categoria, g.nivel,(s1.puntos_salto+s2.puntos_suelo+v.puntos_viga+b.puntos_barras) as puntos_totales
+FROM gimnastas as g
+INNER JOIN salto as s1 ON g.id = s1.id_gimnasta
+INNER JOIN suelo as s2 ON g.id = s2.id_gimnasta
+INNER JOIN viga as v ON g.id = v.id_gimnasta
+INNER JOIN barras as b ON g.id = b.id_gimnasta
+
+CREATE OR REPLACE VIEW gimnastas_pts_aparatos AS 
+SELECT g.id, g.apellido, g.nombre, g.club, g.categoria, g.nivel,s1.puntos_salto ,s2.puntos_suelo ,v.puntos_viga, b.puntos_barras
+FROM gimnastas as g
+INNER JOIN salto as s1 ON g.id = s1.id_gimnasta
+INNER JOIN suelo as s2 ON g.id = s2.id_gimnasta
+INNER JOIN viga as v ON g.id = v.id_gimnasta
+INNER JOIN barras as b ON g.id = b.id_gimnasta
+
